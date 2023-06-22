@@ -29,7 +29,7 @@ class StoreProjectRequest extends FormRequest
                 'content' => ['required'],
                 'slug' => ['required'],
                 'cover_image' => ['required'],
-                'type_id' => ['nullable|exist::types, id']
+                'type_id' => ['required']
         
         ];
     }

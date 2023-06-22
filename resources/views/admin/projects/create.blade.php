@@ -42,13 +42,20 @@
 
                         <div class="mb-3">
                             <label for="project-types" class="form-label">types</label>
-                              <select class="form-select form-select-lg" name="type_id" id="project-types">
+                              <select class="form-select form-select-lg" @error ('type_id') is-ivalid @enderror name="type_id" id="project-types">
                                 <option value="">scegli una categoria</option>
                                 @foreach($types as $elem)
                                     <option value="{{$elem->id}}">{{ $elem->name }}</option>
                                 @endforeach
                                 
-                              </select>  
+                              </select> 
+                              <div> 
+                                @error ('type_id')
+                                    <div class="alert alert-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                              </div> 
                         </div>
                  
                         <button class="btn btn-success" type="submit">Salva</button>

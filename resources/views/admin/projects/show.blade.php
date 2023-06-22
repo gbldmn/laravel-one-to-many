@@ -6,5 +6,10 @@
     <p>{{ $project->content }}</p>
     <p>{{ $project->slug }}</p>
     <img src="{{ asset('storage/' . $project->cover_image) }}" alt="">
+
+    <div>
+        {{ $project->type->name }}
+    </div>
+
 </div>
 @endsection
