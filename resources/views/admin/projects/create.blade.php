@@ -39,6 +39,17 @@
                             <label for="project-cover-image" class="form-label">Cover image</label>
                             <input type="file" class="form-control" name="cover_image" id="project-cover-image" placeholder="" aria-describeby="fileHelpId">
                         </div>
+
+                        <div class="mb-3">
+                            <label for="project-types" class="form-label">types</label>
+                              <select class="form-select form-select-lg" name="type_id" id="project-types">
+                                <option value="">scegli una categoria</option>
+                                @foreach($types as $elem)
+                                    <option value="{{$elem->id}}">{{ $elem->name }}</option>
+                                @endforeach
+                                
+                              </select>  
+                        </div>
                  
                         <button class="btn btn-success" type="submit">Salva</button>
                     </form>
